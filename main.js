@@ -3,7 +3,7 @@ const FPS = 60;
 
 const CAN_W = 256;
 const CAN_H = 224;
-const PX_RATIO = 0.6;
+const PX_RATIO = 2;
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -37,7 +37,7 @@ class Bullet {
     move() {
         this.y += this.muzzleV / FPS;
         this.az += G / FPS;
-        this.z -= this.az;
+        this.z -= this.az / FPS;
     }
 
     draw() {
